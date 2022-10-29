@@ -2,34 +2,37 @@
 <html lang="el">
 
 <head>
-    <title>CSS text</title>
+    <title>Μορφοποίηση κειμένου</title>
     <meta charset="UTF-8">
-    <meta name="author" content="Author name">
-    <meta name="description" content="Hello World">
-    <link rel="icon" href="/images/favico.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            color: whitesmoke;
-            background-color: gray;
+            font-family: 'Times New Roman', Times, serif;
         }
-        h1 {
-            color: lightskyblue;
+        h1, h2, h3 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        p.special{
+            height: 100px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-decoration:line-through;
             text-align: center;
-        }
-        div {
-            color: black;
-            background-color: lightgray;
+            text-shadow: 1px 1px 5px red;
+            background-color: blueviolet;
+            vertical-align: middle;
         }
     </style>
 </head>
 
 <body>
-    <h1>Κληρονομικότητα CSS</h1>
+    <h1>Μορφοποίηση κειμένου</h1>
     <div>Άρθρο 1
         <p>Παράγραφος 1</p>
         <p>Παράγραφος 2</p>
     </div>
     <p>Παράγραφος 3</p>
+    <p class="special">Ειδική παράγραφος</p>
 </body>
 
 </html>
