@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Add / Remove Classes</title>
+    <style>
+        div{
+            margin:10px;
+        }
+        .hidden{
+            display:none;
+        }
+    </style>
+    <script>
+        function hideImage() {
+            const anImage= document.querySelector("img");
+            anImage.classList.add("hidden");
+        }
+        function showHidden() {
+            const allHidden = document.querySelectorAll(".hidden");
+            for (const anElement of allHidden){
+                anElement.classList.remove("hidden");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="/images/logo-uth.png"alt="UTH Logo" width="200px"/>
+    </div>
+    <div class="hidden">Πανεπιστήμιο Θεσσαλίας</div>
+    <div>
+        <button onclick="hideImage()">Hide Image</button>
+        <button onclick="showHidden()">Show hidden</button>
+    </div>
+
+</body>
+
+</html>

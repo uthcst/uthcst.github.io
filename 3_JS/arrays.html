@@ -7,14 +7,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Αριθμοί</title>
     <script>
-        let m=["11",1,2,3,"45","nick"];
-        console.log(m);
-        console.log(m[0]);
-        m.push("new Item"); //adds a new item
-        console.log(m);
-        let y = m.pop(); //retrieves and removes last item 
-        console.log("Poped item ", y);
-        console.log("List is now ", m);
+        let m = ["11", 1, 2, 3, "45", "nick"];
+        console.log(m); //prints array to console
+        console.log(m[0]); //prints first item
+        m.push("newItem"); //adds a new item to the end
+        console.log(m[m.length - 1]); //prints last item
+        let y = m.shift(); //retrieves and removes first item 
+        console.log("Poped item ", y); //prints removed item
+        console.log(m); //prints final array
+
+        let l = ["a","d","f"];
+        for (let i = 0; i < l.length; i++) {
+            console.log(l[i]);
+        }
+
+        for (let anItem of l) {
+            console.log(anItem);
+        }
+
+        let k = [];
+        for (let i = 0; i < 5; i++) {
+            k[i] = 2 * i + 1;
+        }
+        //Returns values
+        console.log("for of loop");
+        for (let anItem of k) {
+            console.log(anItem);
+        }
+        //Returns keys - indexes
+        console.log("for in loop");
+        for (let anItem in k) {
+            console.log(anItem);
+        }
     </script>
 </head>
 

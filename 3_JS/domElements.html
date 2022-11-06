@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDOM Add / Remove Elements</title>
+    <style>
+        div{
+            margin:10px;
+        }
+    </style>
+    <script>
+        function addElements() {
+            let aNewElement = document.createElement("div");
+            aNewElement.textContent="New Element";
+            let aParent = document.querySelector("#Container");
+            aParent.appendChild(aNewElement); 
+        }
+        function removeElements() {
+            let anElement = document.querySelector("#Container div");
+            anElement.remove();
+        }
+        function removeAll() {
+            let aParent = document.querySelector("#Container");
+            aParent.innerHTML="";
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <button onclick="addElements()">Προσθήκη στοιχείου</button>
+        <button onclick="removeElements()">Διαγραφή στοιχείου</button>
+        <button onclick="removeAll()">Διαγραφή όλων</button>
+    </div>
+    <div id="Container"></div>
+</div>
+
+</body>
+
+</html>
