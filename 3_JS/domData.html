@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDOM Add / Remove Elements</title>
+    <style>
+        div{
+            width:100px;
+            display: inline-block;
+            border:1px solid black;
+            font-size: 3rem;
+            text-align: center;
+            margin:10px;
+        }
+    </style>
+    <script>
+        function handleClick(event) {
+            let anElement = event.currentTarget; 
+            let clickCount = parseInt(anElement.dataset.clickcount) + 1;
+            anElement.dataset.clickcount = clickCount;
+            if (clickCount >= 3){
+                anElement.remove();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Click on elements 3 times to remove them</h1>
+    <div data-clickCount="0" onclick="handleClick(event)">1</div>
+    <div data-clickCount="0" onclick="handleClick(event)">2</div>
+    <div data-clickCount="0" onclick="handleClick(event)">3</div>
+</body>
+
+</html>
