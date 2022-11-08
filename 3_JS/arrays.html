@@ -40,11 +40,17 @@
             console.log(anItem);
         }
 
-        let list=[2,4,6];
+        let list=[2,4,6,7,8];
+        console.log("Initial list: ", list);
         list.splice(1,0,3); //add element at index 1
-        console.log(list);
-        list.splice(0,2); //remove first two elements
-        console.log(list);
+        console.log("list after add with splice: ", list);
+        let removed = list.splice(0,2); //remove first two elements
+        console.log("List after remove with splice: ", list);
+        console.log("Removed items: ",removed);
+        let copied = list.slice(0,1); //remove first two elements
+        console.log("List after slice: ", list);
+        console.log("Copied items: ",copied);
+
     </script>
 </head>
 

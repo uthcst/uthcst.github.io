@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <script>
+        //creation with object literal
+        const nick = {
+            name: "nick",
+            age: 23,
+            //define method
+            talk: function () {
+                console.log("I am " + this.name + " and my age is " + this.age)
+            },
+            //shorter definition for another name
+            sayName() { console.log(this.name); }
+        };
+
+        //Object constructor
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.talk = function () {
+                console.log("I am " + this.name +
+                    " and my age is " + this.age);
+            };
+            this.sayName = function () {
+                console.log(this.name);
+            }
+        }
+        //Creation of two independent instances
+        const anna = new Person("Anna", 24);
+        const petros = new Person("Petros", 28);
+        console.log(nick, anna, petros);
+        nick.talk();
+        anna.talk();
+        petros.talk();
+        nick.sayName();
+
+        //add method after the creation of object
+        anna.sayAge=function(){
+            console.log(this.age);
+        }
+        
+        //copy method from another object
+        petros.sayAge = anna.sayAge;
+        anna.sayAge();
+        petros.sayAge();
+
+    </script>
+</head>
+
+<body>
+    <h1>Δημιουργία αντικειμένων</h1>
+    <div>Ελέγξτε τα μηνύματα στην κονσόλα</div>
+</body>
+
+</html>
