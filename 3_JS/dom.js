@@ -7,4 +7,5 @@ function onAlert() {
 const buttonClick = document.querySelector("#ButtonClick");
 const buttonAlert = document.querySelector("#ButtonAlert");
 buttonClick.addEventListener('click', onClick);
-buttonAlert.addEventListener('click', onAlert);
+/* buttonAlert.addEventListener('click', onAlert); */
+buttonAlert.onclick = onAlert;
