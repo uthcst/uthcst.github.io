@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Object</title>
+    <title>Δημιουργία αντικειμένων</title>
     <script>
         //creation with object literal
         const nick = {
@@ -16,35 +16,49 @@
                 console.log("I am " + this.name + " and my age is " + this.age)
             },
             //shorter definition for another name
-            sayName() { console.log(this.name); }
+            say() { console.log(this.name); }
         };
+        nick.talk();
 
-        //Object constructor
+        //Factory Function
+        function createPerson(name, age) {
+            return {
+                name: name,
+                age, // shortcut for: age: age,
+                talk() {
+                    console.log("I am " + this.name +
+                        " and my age is " + this.age)
+                }
+            }
+        }
+        //creation of objects with factory function
+        const marios= createPerson("Marios", 27);
+        const eleni= createPerson("Eleni", 31);
+        marios.talk();
+        eleni.talk();
+
+        //Function constructor
         function Person(name, age) {
             this.name = name;
             this.age = age;
             this.talk = function () {
                 console.log("I am " + this.name +
                     " and my age is " + this.age);
-            };
-            this.sayName = function () {
-                console.log(this.name);
             }
         }
-        //Creation of two independent instances
+        //Creation of objects with new keyword
         const anna = new Person("Anna", 24);
         const petros = new Person("Petros", 28);
-        console.log(nick, anna, petros);
-        nick.talk();
         anna.talk();
         petros.talk();
-        nick.sayName();
+
+        console.log(nick, marios, eleni, anna, petros);
 
         //add method after the creation of object
-        anna.sayAge=function(){
+        anna.sayAge = function () {
             console.log(this.age);
         }
-        
+
         //copy method from another object
         petros.sayAge = anna.sayAge;
         anna.sayAge();

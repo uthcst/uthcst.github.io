@@ -12,13 +12,13 @@
         }
     </style>
     <script>
-        function addElements() {
+        function addElement() {
             let aNewElement = document.createElement("div");
             aNewElement.textContent="New Element";
             let aParent = document.querySelector("#Container");
             aParent.appendChild(aNewElement); 
         }
-        function removeElements() {
+        function removeElement() {
             let anElement = document.querySelector("#Container div");
             anElement.remove();
         }
@@ -32,8 +32,8 @@
 <body>
     <h1>Προσθαφαίρεση στοιχείων CSS</h1>
     <div>
-        <button onclick="addElements()">Προσθήκη στοιχείου</button>
-        <button onclick="removeElements()">Διαγραφή στοιχείου</button>
+        <button onclick="addElement()">Προσθήκη στοιχείου</button>
+        <button onclick="removeElement()">Διαγραφή στοιχείου</button>
         <button onclick="removeAll()">Διαγραφή όλων</button>
     </div>
     <div id="Container"></div>

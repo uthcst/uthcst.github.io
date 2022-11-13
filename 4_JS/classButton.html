@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            display: block;
+            font-size: 24pt;
+            width: 100px;
+            margin: 5px 0;
+        }
+    </style>
+    <script type="module">
+        class Button {
+            constructor(containerElement, text) {
+                this.containerElement = containerElement;
+                this.text = text;
+
+                this.onClick = this.onClick.bind(this);
+
+                const button = document.createElement('button');
+                button.textContent = text;
+                button.addEventListener('click', this.onClick);
+                this.containerElement.append(button);
+            }
+
+            onClick() {
+                console.log('clicked: ' + this.text);
+            }
+        }
+
+        const buttonContainer = document.querySelector('#menu');
+        const button1 = new Button(buttonContainer, 'A');
+        const button2 = new Button(buttonContainer, 'B');
+        const button3 = new Button(buttonContainer, 'C');
+
+    </script>
+</head>
+
+<body>
+
+    <div id="menu"></div>
+    <h1 id="status-bar"></h1>
+
+</body>
+
+</html>
