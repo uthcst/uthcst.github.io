@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currying</title>
     <script>
-        const flavors =
-            ['vanilla', 'chocolate', 'strawberry', 'green tea'];
-
-        function createFlavorTest(flavor) {
-            function isFlavor(element) {
-                return element === flavor;
-            }
-            return isFlavor;
+        const addNumbers =  function (x, y, z) {
+            return x + y + z;
         }
-        const isStrawberry = createFlavorTest('strawberry');
-        const indexOfFlavor = flavors.findIndex(isStrawberry);
-        console.log("Index of straberry = ",indexOfFlavor);
+        console.log(addNumbers(1,2,3));
+        
+        const addNumbersCurry = function (x) {
+            return function (y) {
+                return function (z) {
+                    return x + y + z;
+                }
+            }
+        }
+        console.log(addNumbersCurry(1)(2)(3));
     </script>
 </head>
 
