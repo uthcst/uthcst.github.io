@@ -14,8 +14,8 @@
         let nick = {name: "Nick" };;
         let petros = { name: "Petros" };
         let mary = {name: "Mary" };
-        nick.talk =  talk.bind(nick);
         let talkPetros = talk.bind(petros);
+        nick.talk =  talk.bind(nick);
         //we cannot change the binding 
         //of a mthod already binded
         let talkMary = nick.talk.bind(mary);
