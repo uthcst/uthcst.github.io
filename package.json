@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "uthcst.github.io",
+  "version": "1.0.0",
+  "description": "uthcst.github.io",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uthcst/uthcst.github.io.git"
+  },
+  "author": "gt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uthcst/uthcst.github.io/issues"
+  },
+  "homepage": "https://github.com/uthcst/uthcst.github.io#readme"
+}
